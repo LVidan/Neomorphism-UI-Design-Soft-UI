@@ -1,0 +1,86 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #dde1e7;
+  color: #333;
+}
+
+.crd {
+  width: 100%;
+  height: 100%;
+  background-color: #dde1e7;
+  box-shadow: -5px -5px 7px #ffffff73, 5px 5px 7px rgba($color: #000000, $alpha: .4);
+  border-radius: 20px;
+  transition: all .3s;
+
+  &__icon {
+    text-align: center;
+    line-height: 150px;
+    font-size: 70px;
+  }
+
+  &__tl {
+    font-size: 24px;
+    position: relative;
+
+    &::before {
+      margin-bottom: 16px;
+      width: 70px;
+      height: 70px;
+      border-radius: 100px;
+      font-family: FontAwesome;
+      display: block;
+      position: relative;
+      left: 0;
+      top: 0;
+      color: #3E6EFF;
+      font-size: 40px;
+      line-height: 70px;
+      text-align: center;
+      box-shadow: -5px -5px 7px #ffffff73, 5px 5px 7px rgba($color: #000000, $alpha: .4);
+    }
+  }
+
+  &--reverse {
+    box-shadow: inset -5px -5px 7px #ffffff73, inset 5px 5px 7px rgba($color: #000000, $alpha: .4);
+  }
+
+  &--lg {
+    padding: 30px;
+  }
+
+  &--training {
+    padding: 10px 15px;
+  }
+}
+
+
+$icons: (
+  'bandcamp': "\f2d5",
+  'meetup': "\f2e0",
+  'freecamp': '\f2c5',
+  'imdb': '\f2d8'
+);
+
+@each $name, $glyph in $icons {
+  .crd__tl--#{$name}:before {
+    content: $glyph;
+  }
+}
+
+.btn {
+  display: block;
+  border-radius: 100px;
+  color: #3E6EFF;
+  font-weight: 600;
+  background-color: #dde1e7;
+  box-shadow: -5px -5px 7px #ffffffb9, 5px 5px 7px rgba($color: #000000, $alpha: .4);
+  transition: all .4s;
+
+  &:hover {
+    color: #3E6EFF;
+    box-shadow: -5px -5px 7px #ffffffd2, 5px 5px 7px rgba($color: #000000, $alpha: .6);
+  }
+  &:focus {
+    outline: none;
+  }
+}
